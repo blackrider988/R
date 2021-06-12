@@ -218,30 +218,121 @@ pre code {
 <p>Data frames</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RyKG10Y2FycylcblxuYGBgIn0= -->
-<pre class="r"><code>str(mtcars)
-</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGVhZChtdGNhcnMpXG50YWlsKG10Y2FycylcbnN0cihtdGNhcnMpXG5gYGAifQ== -->
+<pre class="r"><code>head(mtcars)
+tail(mtcars)
+str(mtcars)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiJ2RhdGEuZnJhbWUnOlx0MzIgb2JzLiBvZiAgMTEgdmFyaWFibGVzOlxuICQgbXBnIDogbnVtICAyMSAyMSAyMi44IDIxLjQgMTguNyAxOC4xIDE0LjMgMjQuNCAyMi44IDE5LjIgLi4uXG4gJCBjeWwgOiBudW0gIDYgNiA0IDYgOCA2IDggNCA0IDYgLi4uXG4gJCBkaXNwOiBudW0gIDE2MCAxNjAgMTA4IDI1OCAzNjAgLi4uXG4gJCBocCAgOiBudW0gIDExMCAxMTAgOTMgMTEwIDE3NSAxMDUgMjQ1IDYyIDk1IDEyMyAuLi5cbiAkIGRyYXQ6IG51bSAgMy45IDMuOSAzLjg1IDMuMDggMy4xNSAyLjc2IDMuMjEgMy42OSAzLjkyIDMuOTIgLi4uXG4gJCB3dCAgOiBudW0gIDIuNjIgMi44OCAyLjMyIDMuMjEgMy40NCAuLi5cbiAkIHFzZWM6IG51bSAgMTYuNSAxNyAxOC42IDE5LjQgMTcgLi4uXG4gJCB2cyAgOiBudW0gIDAgMCAxIDEgMCAxIDAgMSAxIDEgLi4uXG4gJCBhbSAgOiBudW0gIDEgMSAxIDAgMCAwIDAgMCAwIDAgLi4uXG4gJCBnZWFyOiBudW0gIDQgNCA0IDMgMyAzIDMgNCA0IDQgLi4uXG4gJCBjYXJiOiBudW0gIDQgNCAxIDEgMiAxIDQgMiAyIDQgLi4uXG4ifQ== -->
-<pre><code>&#39;data.frame&#39;:   32 obs. of  11 variables:
- $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
- $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
- $ disp: num  160 160 108 258 360 ...
- $ hp  : num  110 110 93 110 175 105 245 62 95 123 ...
- $ drat: num  3.9 3.9 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 ...
- $ wt  : num  2.62 2.88 2.32 3.21 3.44 ...
- $ qsec: num  16.5 17 18.6 19.4 17 ...
- $ vs  : num  0 0 1 1 0 1 0 1 1 1 ...
- $ am  : num  1 1 1 0 0 0 0 0 0 0 ...
- $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
- $ carb: num  4 4 1 1 2 1 4 2 2 4 ...</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6OCwibmNvbCI6NSwic3VtbWFyeSI6W119LCJyZGYiOiJINHNJQUFBQUFBQUFCZ3R5aVREbWl1QmlZR0JnWm1BQlltWldJSk9CelRuQTBNalVpSUdCaFFuSVl3VEtjSUxvQ3FBcVlTQURwRVlBaURtZ0V1eStxVVhKcFVXVlVDNXJXR3BlYVRHTTQ1cFlWSklCNWJENEpoYkJKTmk5U2dzeVMxS0xvRnkyNE1TUzBxSThHQyswS0JGaEJydGZha0ZKYVY0cW1yVkNJYWxGUmFuRkpVV1ppVGtLQlRtSmVha2xOSkhoZEU4c1ZralBUTXdqUzRDQmdRL2tadnNiUlJzVWpzeGVadjh1enRTKzV1MUUrdzhNWUdEL2tFM2xycjdVQWdlMWJDWWV6MTF4RGtwUEh3ZC9QM2ZUUVlCZEd5VGd3QytRNUh2cDR5cVlPUTYrZ2E5YjVYWUVIY2hMV0h5ZHk3WVFiczZIcW9mdTYwU3E3Vy9aRm9BazdHOERWUUdWN24vT0JSYXdmd29XTGdRcTVRS0hJU1pnUk1Vb2NjK2FsNWliV2d5TkFGWllkSUlFWWV5U3lnSVlteU1sRXlpQmlGdU9vdnlTeEpMTWZGanNzaFpsNXFVWG85bkFXWlJmcmdlemhSZUltUm9nenVKQWQwcHlUbUl4ekNrd1FhNlV4SkpFdmJRaWtJTVlHUDZoYVdIUEx3QlpEOVRFaEp4KzRRbTdDRTJBdnpRUDVKSVUzZVNNMHJ4c1hUTm9vREZDQTRvWHl1WkFZck5DckdUNmp4WkdiS2w1NlpsNXNKQmh6VWxNU3MyQmN2aUFQZ1o3V0s4QUdDQ3dwTU1GRkMzV0t3R0dHRXdkVjNKK0Rrd0U3RGVHZndEZFlQcHN0d01BQUE9PSJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5uYW1lIDwtIGMoXCJNZXJjdXJ5XCIsIFwiVmVudXNcIiwgXCJFYXJ0aFwiLCBcIk1hcnNcIiwgXCJKdXBpdGVyXCIsIFwiU2F0dXJuXCIsIFwiVXJhbnVzXCIsIFwiTmVwdHVuZVwiKVxudHlwZSA8LSBjKFwiVGVycmVzdHJpYWwgcGxhbmV0XCIsIFwiVGVycmVzdHJpYWwgcGxhbmV0XCIsIFwiVGVycmVzdHJpYWwgcGxhbmV0XCIsIFxuICAgICAgICAgIFwiVGVycmVzdHJpYWwgcGxhbmV0XCIsIFwiR2FzIGdpYW50XCIsIFwiR2FzIGdpYW50XCIsIFwiR2FzIGdpYW50XCIsIFwiR2FzIGdpYW50XCIpXG5kaWFtZXRlciA8LSBjKDAuMzgyLCAwLjk0OSwgMSwgMC41MzIsIDExLjIwOSwgOS40NDksIDQuMDA3LCAzLjg4MylcbnJvdGF0aW9uIDwtIGMoNTguNjQsIC0yNDMuMDIsIDEsIDEuMDMsIDAuNDEsIDAuNDMsIC0wLjcyLCAwLjY3KVxucmluZ3MgPC0gYyhGQUxTRSwgRkFMU0UsIEZBTFNFLCBGQUxTRSwgVFJVRSwgVFJVRSwgVFJVRSwgVFJVRSlcblxuXG5wbGFuZXRzX2RmIDwtIGRhdGEuZnJhbWUobmFtZSx0eXBlLGRpYW1ldGVyLHJvdGF0aW9uLHJpbmdzKVxucGxhbmV0c19kZlxuYGBgIn0= -->
+<pre class="r"><code>
+name &lt;- c(&quot;Mercury&quot;, &quot;Venus&quot;, &quot;Earth&quot;, &quot;Mars&quot;, &quot;Jupiter&quot;, &quot;Saturn&quot;, &quot;Uranus&quot;, &quot;Neptune&quot;)
+type &lt;- c(&quot;Terrestrial planet&quot;, &quot;Terrestrial planet&quot;, &quot;Terrestrial planet&quot;, 
+          &quot;Terrestrial planet&quot;, &quot;Gas giant&quot;, &quot;Gas giant&quot;, &quot;Gas giant&quot;, &quot;Gas giant&quot;)
+diameter &lt;- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883)
+rotation &lt;- c(58.64, -243.02, 1, 1.03, 0.41, 0.43, -0.72, 0.67)
+rings &lt;- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
+
+
+planets_df &lt;- data.frame(name,type,diameter,rotation,rings)
+planets_df</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>selection of data frame elements</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MywibmNvbCI6NSwic3VtbWFyeSI6W119LCJyZGYiOiJINHNJQUFBQUFBQUFCZ3R5aVREbWl1QmlZR0JnWm1BQlltWldJSk9CelRuQTBNalVpSUdCaFFuSVl3VEtjSUxvQ3FBcVlTQURwRVlBcWdVa3dlNmJXcFJjV2xRSjViS0dwZWFWRmtNNUxMNkpSY1ZvNm9WQ1VvdUtVb3RMaWpJVGN4UUtjaEx6VWt2SWttRmc0QU9aYW4ramFJUENrZG5MN04vRm1kclh2SjFvLzVCTjVhNisxQUtZdklOdjRPdFd1UjFCQi9JU0ZsL25zaTIwLzFEMTBIMmRTRFZRRHVKeEZJRGlaZGE4eE54VW1QTlpZVjRDQ2NMWUpaVUZNRFpIU2laUW9pUzFDTVl2eWk5SkxNbk16NE1aVnBTWmwxNk1aZ05uVVg2NUhzd1dYcWh6R0lFWXBJZ0YzVG5KT1luRk1PZkFCTGxTRWtzUzlkS0tRSTVpWVBpSHBvVTl2d0RrQktBbUp1U29nOGRwRVpvQWYya2V5RFVwdXNrWnBYblp1c2JRUUdLRVlsNG96WXpFWm9WWXlmUWZMWnpZVXZQU00vTmdvY09hazVpVW1nUGw4QUY5RGZhMFhnRXdVR0J4ekFVVUxkWXJBWVlhVEIxWGNuNE9UQVRzTjRaL0FMNVFUb3V5QWdBQSJ9 -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["type"],"name":[2],"type":["chr"],"align":["left"]},{"label":["diameter"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["rotation"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["rings"],"name":[5],"type":["lgl"],"align":["right"]}],"data":[{"1":"Mercury","2":"Terrestrial planet","3":"0.382","4":"58.64","5":"FALSE"},{"1":"Venus","2":"Terrestrial planet","3":"0.949","4":"-243.02","5":"FALSE"},{"1":"Earth","2":"Terrestrial planet","3":"1.000","4":"1.00","5":"FALSE"},{"1":"Mars","2":"Terrestrial planet","3":"0.532","4":"1.03","5":"FALSE"},{"1":"Jupiter","2":"Gas giant","3":"11.209","4":"0.41","5":"TRUE"},{"1":"Saturn","2":"Gas giant","3":"9.449","4":"0.43","5":"TRUE"},{"1":"Uranus","2":"Gas giant","3":"4.007","4":"-0.72","5":"TRUE"},{"1":"Neptune","2":"Gas giant","3":"3.883","4":"0.67","5":"TRUE"}],"options":{"columns":{"min":{},"max":[10],"total":[5]},"rows":{"min":[10],"max":[10],"total":[8]},"pages":{}}}
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["type"],"name":[2],"type":["chr"],"align":["left"]},{"label":["diameter"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["rotation"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["rings"],"name":[5],"type":["lgl"],"align":["right"]}],"data":[{"1":"Mercury","2":"Terrestrial planet","3":"0.382","4":"58.64","5":"FALSE","_rn_":"1"},{"1":"Venus","2":"Terrestrial planet","3":"0.949","4":"-243.02","5":"FALSE","_rn_":"2"},{"1":"Mars","2":"Terrestrial planet","3":"0.532","4":"1.03","5":"FALSE","_rn_":"4"}],"options":{"columns":{"min":{},"max":[10],"total":[5]},"rows":{"min":[10],"max":[10],"total":[3]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Sorting</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6OCwibmNvbCI6NSwic3VtbWFyeSI6W119LCJyZGYiOiJINHNJQUFBQUFBQUFCZ3R5aVREbWl1QmlZR0JnWm1BQlltWldJSk9CelRuQTBNalVpSUdCaFFuSVl3VEtjSUxvQ3FBcVlTQURwRVlBaURtZ0V1eStxVVhKcFVXVlVDNkxiMkpSTVpUTkdwYWFWd3JudUNZV2xXVEFOUG1sRnBTVTVxVkN1V3loUllrSWxXekJpU1dsUlhrd3BWNmxCWmtscVVWbzFncUZwQllWcFJhWEZHVW01aWdVNUNUbXBaYlFSSWJUUGJGWUlUMHpNWThzQVFZR1BwQ2I3VzhVYlZBNE1udVovVU0ybGJ2NlVndnMzOFdaMnRlOG5Xai9nUUVNSFBnRmtud3ZmVnpsSU1DdXpjVGp1Y3RCNmVuajRPL25ianFvWllPNGNUQnpISHdEWDdmSzdRaXkvMUQxMEgyZFNQV0J2SVRGMTdsc0MySG0yRDh0QVBQM1ArZXlCYkhzYndOVkE3WFkzd0p6YllGS3VNQmhpQWtZVVRGSzNMUG1KZWFtRmtNamdCVVcwU0JCR0x1a3NnREc1a2pKQkVxQUlnektMOG92U1N6SnpJZkZKMnRSWmw1Nk1ab05uRVg1NVhvd1czaWhUZ1E1aFFXSW1jQUpGQ0xHRGtvZmtGU0k2c1Rrbk1SaW1CTmhnbHdwaVNXSmVtbEZJSWN5TVB4RDA4S2VYd0J5RmxBVEUzSzZoaWY0SWpRQmdkSThrQXRUZEpNelN2T3lkUTFOb2FFSkN6VmVLTTJCeElZNmsray9XdUN4cGVhbFo4S1RQMnRPWWxKcURwVERCd3dLY0Vqb0ZRQkRDcGFtdUlDaXhYb2x3S0NFcWVOS3pzK0JpWUE5eC9BUEFEdzNFL3JRQXdBQSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["type"],"name":[2],"type":["chr"],"align":["left"]},{"label":["diameter"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["rotation"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["rings"],"name":[5],"type":["lgl"],"align":["right"]}],"data":[{"1":"Mercury","2":"Terrestrial planet","3":"0.382","4":"58.64","5":"FALSE","_rn_":"1"},{"1":"Mars","2":"Terrestrial planet","3":"0.532","4":"1.03","5":"FALSE","_rn_":"4"},{"1":"Venus","2":"Terrestrial planet","3":"0.949","4":"-243.02","5":"FALSE","_rn_":"2"},{"1":"Earth","2":"Terrestrial planet","3":"1.000","4":"1.00","5":"FALSE","_rn_":"3"},{"1":"Neptune","2":"Gas giant","3":"3.883","4":"0.67","5":"TRUE","_rn_":"8"},{"1":"Uranus","2":"Gas giant","3":"4.007","4":"-0.72","5":"TRUE","_rn_":"7"},{"1":"Saturn","2":"Gas giant","3":"9.449","4":"0.43","5":"TRUE","_rn_":"6"},{"1":"Jupiter","2":"Gas giant","3":"11.209","4":"0.41","5":"TRUE","_rn_":"5"}],"options":{"columns":{"min":{},"max":[10],"total":[5]},"rows":{"min":[10],"max":[10],"total":[8]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Lists</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXlfbGlzdFxuXG5gYGAifQ== -->
+<pre class="r"><code>my_list
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiW1sxXV1cbiBbMV0gIDEgIDIgIDMgIDQgIDUgIDYgIDcgIDggIDkgMTBcblxuW1syXV1cbiAgICAgWywxXSBbLDJdIFssM11cblsxLF0gICAgMSAgICA0ICAgIDdcblsyLF0gICAgMiAgICA1ICAgIDhcblszLF0gICAgMyAgICA2ICAgIDlcblxuW1szXV1cbiJ9 -->
+<pre><code>[[1]]
+ [1]  1  2  3  4  5  6  7  8  9 10
+
+[[2]]
+     [,1] [,2] [,3]
+[1,]    1    4    7
+[2,]    2    5    8
+[3,]    3    6    9
+
+[[3]]</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6NCwibmNvbCI6NSwic3VtbWFyeSI6W119LCJyZGYiOiJINHNJQUFBQUFBQUFCZ3R5aVREbWl1QmlZR0JnWm1BQlltWldJSk9CelRuQTBNalVpSUdCaFFuSVl3VEtjSUxvQ3FBcVlTQURwRVlBaUZtZ0V1eStxVVhKcFVXVlVDNXJXR3BlYVRHTTQ1cFlWSklCNWJENEpoWVZvMmtXQ2trdEtrb3RMaW5LVE14UktNaEp6RXN0b2JJTUF3TWZ5RDc3RzBVYkZJN01YbWIvTHM3VXZ1YnRSUHNQREdCZy81Qk41YTYrMUFLWU9nZmZ3TmV0Y2p1Q0R1UWxMTDdPWlZzSVYvZWg2cUg3T3BGcUlKTUw3SDRNZ0JKYXJIbUp1YWt3ejdMQ0FnQWtDR09YVkJiQTJCd3BtVUNKa3RRaUdMOG92eVN4SkRNL0QyWllVV1plZWpHYURaeEYrZVY2TUZ0NGdaaXBBZW9PZEtjazV5UVd3NXdDRStSS1NTeEoxRXNyQWptSWdlRWZtaGIyL0FLUTlVQk5UTWd4RGs4S1JXZ0NBcVY1SUplazZDWm5sT1psNnhvWlFFT0pFWXA1b1RRTEVwc1ZZaWZUZjdSQVlrdk5TOC9NZ3dVTmEwNWlVbW9PbE1NSDlETFl4M29Gd0JDQlJUb1hVTFJZcndRWVpEQjFYTW41T1RBUnNPY1kvZ0VBSFhLTjN1b0NBQUE9In0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["type"],"name":[2],"type":["chr"],"align":["left"]},{"label":["diameter"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["rotation"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["rings"],"name":[5],"type":["lgl"],"align":["right"]}],"data":[{"1":"Mercury","2":"Terrestrial planet","3":"0.382","4":"58.64","5":"FALSE","_rn_":"1"},{"1":"Venus","2":"Terrestrial planet","3":"0.949","4":"-243.02","5":"FALSE","_rn_":"2"},{"1":"Earth","2":"Terrestrial planet","3":"1.000","4":"1.00","5":"FALSE","_rn_":"3"},{"1":"Mars","2":"Terrestrial planet","3":"0.532","4":"1.03","5":"FALSE","_rn_":"4"}],"options":{"columns":{"min":{},"max":[10],"total":[5]},"rows":{"min":[10],"max":[10],"total":[4]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTkFcbiJ9 -->
+<pre><code>NA</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>creating a named list</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXlfbGlzdFxuXG5gYGAifQ== -->
+<pre class="r"><code>my_list
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiJHZlY3RvclxuIFsxXSAgMSAgMiAgMyAgNCAgNSAgNiAgNyAgOCAgOSAxMFxuXG4kbWF0cml4XG4gICAgIFssMV0gWywyXSBbLDNdXG5bMSxdICAgIDEgICAgNCAgICA3XG5bMixdICAgIDIgICAgNSAgICA4XG5bMyxdICAgIDMgICAgNiAgICA5XG5cbiRgZGF0YSBmcmFtZWBcbiJ9 -->
+<pre><code>$vector
+ [1]  1  2  3  4  5  6  7  8  9 10
+
+$matrix
+     [,1] [,2] [,3]
+[1,]    1    4    7
+[2,]    2    5    8
+[3,]    3    6    9
+
+$`data frame`</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6NCwibmNvbCI6NSwic3VtbWFyeSI6W119LCJyZGYiOiJINHNJQUFBQUFBQUFCZ3R5aVREbWl1QmlZR0JnWm1BQlltWldJSk9CelRuQTBNalVpSUdCaFFuSVl3VEtjSUxvQ3FBcVlTQURwRVlBaUZtZ0V1eStxVVhKcFVXVlVDNXJXR3BlYVRHTTQ1cFlWSklCNWJENEpoWVZvMmtXQ2trdEtrb3RMaW5LVE14UktNaEp6RXN0b2JJTUF3TWZ5RDc3RzBVYkZJN01YbWIvTHM3VXZ1YnRSUHNQREdCZy81Qk41YTYrMUFLWU9nZmZ3TmV0Y2p1Q0R1UWxMTDdPWlZzSVYvZWg2cUg3T3BGcUlKTUw3SDRNZ0JKYXJIbUp1YWt3ejdMQ0FnQWtDR09YVkJiQTJCd3BtVUNKa3RRaUdMOG92eVN4SkRNL0QyWllVV1plZWpHYURaeEYrZVY2TUZ0NGdaaXBBZW9PZEtjazV5UVd3NXdDRStSS1NTeEoxRXNyQWptSWdlRWZtaGIyL0FLUTlVQk5UTWd4RGs4S1JXZ0MvS1Y1SUplazZDWm5sT1psNnhwQkE0a1Jpbm1oTkFzU214VmlKZE4vdERCaVM4MUx6OHlEaFF4clRtSlNhZzZVd3dmME1kakRlZ1hBQUlIRk9SZFF0Rml2QkJoaU1IVmN5Zms1TUJHdzN4aitBUURZbmFOKzZRSUFBQT09In0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["type"],"name":[2],"type":["chr"],"align":["left"]},{"label":["diameter"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["rotation"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["rings"],"name":[5],"type":["lgl"],"align":["right"]}],"data":[{"1":"Mercury","2":"Terrestrial planet","3":"0.382","4":"58.64","5":"FALSE","_rn_":"1"},{"1":"Venus","2":"Terrestrial planet","3":"0.949","4":"-243.02","5":"FALSE","_rn_":"2"},{"1":"Earth","2":"Terrestrial planet","3":"1.000","4":"1.00","5":"FALSE","_rn_":"3"},{"1":"Mars","2":"Terrestrial planet","3":"0.532","4":"1.03","5":"FALSE","_rn_":"4"}],"options":{"columns":{"min":{},"max":[10],"total":[5]},"rows":{"min":[10],"max":[10],"total":[4]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTkFcbiJ9 -->
+<pre><code>NA</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Selection elements from a list</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MiwibmNvbCI6Miwic3VtbWFyeSI6W119LCJyZGYiOiJINHNJQUFBQUFBQUFCbDFRUzI3Q01CQ2RtSVNDSlJBUzV5RGlJNWFvaS9ZQUZTdVdkWk1BRWNFR3gxRjduMTZrdCtnMWVnTG9PTXdzWWt2V3pEelBtemZQMjlmZFN1NGtBUFFneHR0TE1JWCt5OXRpdVY0Q3hBS3JDRitHUG41aDF4UVRENDU5L05IdjM3OXljMzMrQXo2UzN1bDBCaVJhbllzYWswbmI5QUFIMWpqbFNxTzV5WmI2VUFmTW9UV2ZLYk5ISkNIYXJRT0pyRkkxU3pBb2MrVlV1cmZJeCtvV1VKN014Y3NqU1hoelNVQ09iQUJNR3UwM3lXZlpzZEduMldKT3JpTzZJNHFpbTN0TmNhZFpDYzNxRi9wUTZvS1hyOVJIVVZFeFJzdXQ0L1NDUCtMWUNxSjE2dkRMdUU5bXBtS2tOUWUzZnh4TkNuZlZBUUFBIn0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["rotation"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["rings"],"name":[2],"type":["lgl"],"align":["right"]}],"data":[{"1":"-243.02","2":"FALSE","_rn_":"2"},{"1":"1.00","2":"FALSE","_rn_":"3"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[2]},"pages":{}}}
   </script>
 </div>
 <!-- rnb-frame-end -->
@@ -249,7 +340,7 @@ pre code {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpEYXRhIGZyYW1lcw0KYGBge3J9DQpoZWFkKG10Y2FycykNCnRhaWwobXRjYXJzKQ0Kc3RyKG10Y2FycykNCmBgYA0KYGBge3J9DQoNCm5hbWUgPC0gYygiTWVyY3VyeSIsICJWZW51cyIsICJFYXJ0aCIsICJNYXJzIiwgIkp1cGl0ZXIiLCAiU2F0dXJuIiwgIlVyYW51cyIsICJOZXB0dW5lIikNCnR5cGUgPC0gYygiVGVycmVzdHJpYWwgcGxhbmV0IiwgIlRlcnJlc3RyaWFsIHBsYW5ldCIsICJUZXJyZXN0cmlhbCBwbGFuZXQiLCANCiAgICAgICAgICAiVGVycmVzdHJpYWwgcGxhbmV0IiwgIkdhcyBnaWFudCIsICJHYXMgZ2lhbnQiLCAiR2FzIGdpYW50IiwgIkdhcyBnaWFudCIpDQpkaWFtZXRlciA8LSBjKDAuMzgyLCAwLjk0OSwgMSwgMC41MzIsIDExLjIwOSwgOS40NDksIDQuMDA3LCAzLjg4MykNCnJvdGF0aW9uIDwtIGMoNTguNjQsIC0yNDMuMDIsIDEsIDEuMDMsIDAuNDEsIDAuNDMsIC0wLjcyLCAwLjY3KQ0KcmluZ3MgPC0gYyhGQUxTRSwgRkFMU0UsIEZBTFNFLCBGQUxTRSwgVFJVRSwgVFJVRSwgVFJVRSwgVFJVRSkNCg0KDQpwbGFuZXRzX2RmIDwtIGRhdGEuZnJhbWUobmFtZSx0eXBlLGRpYW1ldGVyLHJvdGF0aW9uLHJpbmdzKQ0KcGxhbmV0c19kZg0KYGBgDQoNCg==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpEYXRhIGZyYW1lcw0KYGBge3J9DQpoZWFkKG10Y2FycykNCnRhaWwobXRjYXJzKQ0Kc3RyKG10Y2FycykNCmBgYA0KYGBge3J9DQoNCm5hbWUgPC0gYygiTWVyY3VyeSIsICJWZW51cyIsICJFYXJ0aCIsICJNYXJzIiwgIkp1cGl0ZXIiLCAiU2F0dXJuIiwgIlVyYW51cyIsICJOZXB0dW5lIikNCnR5cGUgPC0gYygiVGVycmVzdHJpYWwgcGxhbmV0IiwgIlRlcnJlc3RyaWFsIHBsYW5ldCIsICJUZXJyZXN0cmlhbCBwbGFuZXQiLCANCiAgICAgICAgICAiVGVycmVzdHJpYWwgcGxhbmV0IiwgIkdhcyBnaWFudCIsICJHYXMgZ2lhbnQiLCAiR2FzIGdpYW50IiwgIkdhcyBnaWFudCIpDQpkaWFtZXRlciA8LSBjKDAuMzgyLCAwLjk0OSwgMSwgMC41MzIsIDExLjIwOSwgOS40NDksIDQuMDA3LCAzLjg4MykNCnJvdGF0aW9uIDwtIGMoNTguNjQsIC0yNDMuMDIsIDEsIDEuMDMsIDAuNDEsIDAuNDMsIC0wLjcyLCAwLjY3KQ0KcmluZ3MgPC0gYyhGQUxTRSwgRkFMU0UsIEZBTFNFLCBGQUxTRSwgVFJVRSwgVFJVRSwgVFJVRSwgVFJVRSkNCg0KDQpwbGFuZXRzX2RmIDwtIGRhdGEuZnJhbWUobmFtZSx0eXBlLGRpYW1ldGVyLHJvdGF0aW9uLHJpbmdzKQ0KcGxhbmV0c19kZg0KYGBgDQoNCnNlbGVjdGlvbiBvZiBkYXRhIGZyYW1lIGVsZW1lbnRzDQpgYGB7cn0NCnBsYW5ldHNfZGZbMSwzXQ0KcGxhbmV0c19kZls0LF0NCnBsYW5ldHNfZGZbMTo1LF0NCnBsYW5ldHNfZGZbMTo1LCJyb3RhdGlvbiJdDQpwbGFuZXRzX2RmWzE6NSxjKCJyb3RhdGlvbiIsInR5cGUiKV0NCg0KcmluZ3NfdmVjdG9yIDwtIHBsYW5ldHNfZGYkcmluZ3MNCnJpbmdzX3ZlY3Rvcg0KDQpwbGFuZXRzX2RmW3JpbmdzX3ZlY3RvcixdDQoNCnN1YnNldChwbGFuZXRzX2RmLCBzdWJzZXQgPSBkaWFtZXRlciA8IDEpDQoNCmBgYA0KDQpTb3J0aW5nDQpgYGB7cn0NCg0KYSA8LSBjKDEwMCwxMCwxMDAwKQ0Kb3JkZXIoYSkNCmIgPC0gYVtvcmRlcihhKV0NCmINCg0KcG9zaXRpb25zIDwtIG9yZGVyKHBsYW5ldHNfZGYkZGlhbWV0ZXIpDQpwb3NpdGlvbnMNCnBsYW5ldHNfZGZbcG9zaXRpb25zLF0NCmBgYA0KTGlzdHMNCmBgYHtyfQ0KbXlfdmVjdG9yIDwtIDE6MTANCm15X21hdHJpeCA8LSBtYXRyaXgoMTo5LCBuY29sPTMpDQpteV9kZiA8LXBsYW5ldHNfZGZbMTo0LF0NCg0KbXlfbGlzdCA8LSBsaXN0KG15X3ZlY3RvcixteV9tYXRyaXgsbXlfZGYpDQpteV9saXN0DQpgYGANCmNyZWF0aW5nIGEgbmFtZWQgbGlzdA0KYGBge3J9DQpuYW1lcyhteV9saXN0KSA8LSBjKCJ2ZWN0b3IiLCJtYXRyaXgiLCJkYXRhIGZyYW1lIikNCm15X2xpc3QNCmBgYA0KU2VsZWN0aW9uIGVsZW1lbnRzIGZyb20gYSBsaXN0DQpgYGB7cn0NCm15X2xpc3RbWzFdXVs0XQ0KbXlfbGlzdFtbMl1dWzIsXQ0KbXlfbGlzdFtbM11dWzI6MyxjKCJyb3RhdGlvbiIsInJpbmdzIildDQpgYGANCg0KDQoNCg0KDQoNCg==</div>
 
 
 
