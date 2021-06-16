@@ -1,9 +1,7 @@
 ---
 title: "Practice No.1 by Gustavo Lima Dubón"
 subtitle: '<h1><u>Functions</u></h1>'
-output: 
-  html_document:
-    keep_md: true
+output: html_notebook
 ---
 
 <h2>What is a Function?</h2>
