@@ -1,0 +1,423 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+  \usepackage{amssymb}
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Practice No.1 by Gustavo Lima Dubón},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{Practice No.1 by Gustavo Lima Dubón}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Functions}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+What is a Function?
+
+If we talk about programming, a function is a piece of code that is
+written to carry a specified task, this is in order to execute segments
+of code that we want to use repeatedly. It can or it cannot accept a
+series of parameters and it can or cannot return one or more values.
+
+¿Qué es una función?
+
+Si hablamos sobre programación, una función es un fragmento de código el
+cual ha sido escrito para realizar una actividad específica, esto con el
+fin de ejecutar segmentos de código que queremos usar de manera
+repetida. Estas pueden o no pueden aceptar una serie de parámetros y
+pueden o no pueden retornar uno o más valores.
+
+Function in R
+
+In R we have subprogram, subroutine, function, procedure, method,
+memeber function, operator, anonymous function, closure, lambada
+expression, block, but for the scope of this practice we will stay with
+the function sematics.
+
+In R, a function is define using the construct:
+
+function (arglist)\{body\}
+
+where the code in between the curly braces is the body function.
+
+Función en R
+
+En R tenemos subprogram, subroutine, function, procedure, method,
+memeber function, operator, anonymous function, closure, lambada
+expression, block, pero para fines de esta práctica nos mantendremos con
+la semántica de función (function).
+
+En R, una función se define usando el siguiente constructor:
+
+function(lista de argumentos)\{cuerpo\}
+
+En donde el código dentro de los corchetes es el cuerpo de la función.
+
+Examples/Ejemplos
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# We will define a vector with 5 values / Definiremos un vector con 5 valores}
+\NormalTok{cars }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{9}\NormalTok{)}
+\CommentTok{\# Function will plot a vector passed as parameter / La función graficara un vector pasado como parámetro.}
+\NormalTok{function.plotCars }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x) }
+\NormalTok{\{}
+  \CommentTok{\# Graph cars using blue points overlayed by a line / Graficamos los carros usando puntos azules con una línea sobrepuesta.}
+  \FunctionTok{plot}\NormalTok{(x, }\AttributeTok{type=}\StringTok{"o"}\NormalTok{, }\AttributeTok{col=}\StringTok{"blue"}\NormalTok{)}
+  \CommentTok{\# Create a title with a red, bold/italic font/Creamos un título con fuente roja, negrita y cursiva.}
+  \FunctionTok{title}\NormalTok{(}\AttributeTok{main=}\StringTok{"Autos"}\NormalTok{, }\AttributeTok{col.main=}\StringTok{"red"}\NormalTok{, }\AttributeTok{font.main=}\DecValTok{4}\NormalTok{)}
+\NormalTok{\}}
+\CommentTok{\#We call our function / Llamamos a nuestra funcion}
+\FunctionTok{function.plotCars}\NormalTok{(cars)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{TareaNo2---Gustavo-Lima_files/figure-latex/unnamed-chunk-1-1.pdf}
+
+Function arguments
+
+There are 2 types of arguments formal arguments and the actual arguments
+of a function. The formal arguments are a property of the function,
+whereas the actual or calling arguments can vary each time you call a
+function. For this practice we will discuss how calling arguments are
+mapped to formal arguments, how to call a function given a list of
+arguments, how default arguments work.
+
+Argumentos de una función
+
+Hay 2 tipos de argumentos los formales y los argumentos actuales de una
+función. Los argumentos formales son propios de la función, mientras que
+el actual o el argumento de llamada puede variar cada vez que se llama
+una función. Para esta práctica discutiremos como los argumentos de
+llamada son mapeados a argumentos formales, como llamar una función dada
+una lista de argumentos, como funcionan los argumentos por defecto.
+
+Calling functions
+
+When calling a function we can specify the arguments by position, by
+complete name or by partial name. Arguments are matched first by exact
+name, then by prefix and finally by position.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{function.arguments }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(a\_arg1, b\_arg2, c\_arg3) \{}
+  \FunctionTok{list}\NormalTok{(}\AttributeTok{a =}\NormalTok{ a\_arg1, }\AttributeTok{b =}\NormalTok{ b\_arg2, }\AttributeTok{c =}\NormalTok{ c\_arg3)}
+\NormalTok{\}}
+\CommentTok{\#Argument in order without specifying the name / Argumentos en orden sin especificar el nombre}
+\FunctionTok{str}\NormalTok{(}\FunctionTok{function.arguments}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## List of 3
+##  $ a: num 1
+##  $ b: num 2
+##  $ c: num 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Arguments will first match the exact name then match the rest in order / Los argumentos primero se emparejan por nombre exacto y despues el resto por orden.}
+\FunctionTok{str}\NormalTok{(}\FunctionTok{function.arguments}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\AttributeTok{a\_arg1 =} \DecValTok{1}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## List of 3
+##  $ a: num 1
+##  $ b: num 2
+##  $ c: num 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Arguments can be matched by abbreviation as long as its not ambiguous / Los argumentos se pueden emparejar por abreviatura siempre y cuanto no sean ambiguos.}
+\FunctionTok{str}\NormalTok{(}\FunctionTok{function.arguments}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\AttributeTok{a =} \DecValTok{1}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## List of 3
+##  $ a: num 1
+##  $ b: num 2
+##  $ c: num 3
+\end{verbatim}
+
+Calling a function given a list of arguments / Llamando a una funcion
+dada una lista de argumentos
+
+Suppose you had a list of function arguments / Supongamos que tenemos
+una lista de argumentos de funcion:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#we use na.rm=TRUE to ignore nulls / usamos na.rm=TRUE para ignorar valores null}
+\NormalTok{args }\OtherTok{\textless{}{-}} \FunctionTok{list}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{10}\NormalTok{, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+How could you then send that list to mean()? You need do.call() / ¿Como
+enviamos esa lista a mean()? Neceistamos do.call():
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#we call the function mean and pass the arguments args / llamamos la funcion mean y pasamos los argumentos args}
+\FunctionTok{do.call}\NormalTok{(mean, args)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5.5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Equivalent to / Equivalente a}
+\FunctionTok{mean}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{10}\NormalTok{, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5.5
+\end{verbatim}
+
+Default arguments:
+
+Function arguments in R can have default values.
+
+Argumentos por defecto: Los argumentos de función en R pueden tener
+valores por defecto.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{function.default }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(}\AttributeTok{a =} \DecValTok{1}\NormalTok{, }\AttributeTok{b =} \DecValTok{2}\NormalTok{) \{}
+  \FunctionTok{c}\NormalTok{(a, b)}
+\NormalTok{\}}
+\FunctionTok{function.default}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{function.default2 }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(}\AttributeTok{a =} \DecValTok{1}\NormalTok{, }\AttributeTok{b =}\NormalTok{ a }\SpecialCharTok{*} \DecValTok{2}\NormalTok{) \{}
+  \FunctionTok{c}\NormalTok{(a, b)}
+\NormalTok{\}}
+\FunctionTok{function.default2}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{function.default2}\NormalTok{(}\DecValTok{10}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 10 20
+\end{verbatim}
+
+Apply Family
+
+The apply family of functions are sometimes useful as an alternative to
+for loops: apply() sapply() vapply()
+
+La familia Apply La familia de funciones apply son a veces utiles como
+alternativa para ciclos for: lapply() sapply() vapply()
+
+lapply() Function
+
+The lapply() function is closely related to lists. The lapply() function
+is a superior order function, this function applies a function to each
+element of a list or vector.
+
+Funcion lapply() La función lapply está estrechamente relacionada con
+las listas. La función lapply es una función de orden superior, que
+aplica una función a cada elemento de una lista o vector.
+
+Example/Ejemplo
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{function.lapplyTest }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(datasetTest)\{}
+  \CommentTok{\#We apply the mean function to each element of the list / Aplicamos la funcion mean a cada elemento de la lista}
+  \FunctionTok{lapply}\NormalTok{(datasetTest,mean,}\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{\}}
+\CommentTok{\#We will pass the airquality dataset as parameter from R library / Pasaremos como parametro el dataset airquality de la libreria de R}
+\FunctionTok{function.lapplyTest}\NormalTok{(airquality[,}\DecValTok{1}\SpecialCharTok{:}\DecValTok{4}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $Ozone
+## [1] 42.12931
+## 
+## $Solar.R
+## [1] 185.9315
+## 
+## $Wind
+## [1] 9.957516
+## 
+## $Temp
+## [1] 77.88235
+\end{verbatim}
+
+The lapply() function operates over a list or vector and returns,
+always, a list.
+
+La función lapply opera sobre una lista o vector y devuelve, siempre,
+una lista.
+
+sapply() Function
+
+The sapply() function is related to the lapply() function, but sapply()
+is a simplified version. The sapply() function applies the lapply()
+function and analyze the result. If the result can be represented in a
+simple manner than a list, it gets simplified.
+
+La funcion sapply() esta relacionada a la funcion lapply(), pero
+sapply() es una version simplificada. La funcion sapply() aplica la
+funcion lapply() y analiza el resultado. Si este se puede representar de
+una manera mas siple que una lista, entonces se simplifica.
+
+Example/Ejemplo
+
+vapply() Function
+
+Whereas sapply() tries to guess the correct format of the result,
+vapply() allows to specify it explicit.
+
+Mientras que sapply() trata de adivinar el formato correcto del
+resultado, vapply() permite especificarlo explícitamente.
+
+Example/Ejemplo\textless/h2
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{function.vapplyTest }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(datasetTest)\{}
+  \CommentTok{\#We apply the mean function to each element of the list and specify the type of format / Aplicamos la funcion mean a cada elemento de la lista y especificamos el tipo de formato}
+  \FunctionTok{vapply}\NormalTok{(datasetTest, mean,}\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{, }\FunctionTok{numeric}\NormalTok{(}\DecValTok{1}\NormalTok{))}
+\NormalTok{\}}
+\CommentTok{\#We will pass the airquality dataset as parameter from R library / Pasaremos como parametro el dataset airquality de la libreria de R}
+\FunctionTok{function.vapplyTest}\NormalTok{(airquality[,}\DecValTok{1}\SpecialCharTok{:}\DecValTok{4}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      Ozone    Solar.R       Wind       Temp 
+##  42.129310 185.931507   9.957516  77.882353
+\end{verbatim}
+
+\end{document}
