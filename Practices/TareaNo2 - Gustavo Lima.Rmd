@@ -1,0 +1,167 @@
+---
+title: "Practice No.1 by Gustavo Lima"
+subtitle: '<h1><u>Functions</u></h1>'
+output: html_notebook
+---
+
+<h2>What is a Function?</h2>
+
+
+  If we talk about programming, a function is a piece of code that is written to carry a specified task, this is in order to execute segments of code that we want to use repeatedly. It can or it cannot accept a series of parameters and it can or cannot return one or more values.
+
+¿Qué es una función?
+
+  Si hablamos sobre programación, una función es un fragmento de código el cual ha sido escrito para realizar una actividad específica, esto con el fin de ejecutar segmentos de código que queremos usar de manera repetida. Estas pueden o no pueden aceptar una serie de parámetros y pueden o no pueden retornar uno o más valores.
+
+<h2>Function in R</h2>
+
+  In R we have subprogram, subroutine, function, procedure, method, memeber function, operator, anonymous function, closure, lambada expression, block, but for the scope of this practice we will stay with the function sematics.
+  
+  In R, a function is define using the construct:
+  
+  <b>function (arglist){body}</b>
+  
+  where the code in between the curly braces is the body function.
+
+Función en R
+  
+  En R tenemos subprogram, subroutine, function, procedure, method, memeber function, operator, anonymous function, closure, lambada expression, block, pero para fines de esta práctica nos mantendremos con la semántica de función (function).
+  
+  En R, una función se define usando el siguiente constructor:
+  
+  <b>function(lista de argumentos){cuerpo}</b>
+  
+  En donde el código dentro de los corchetes es el cuerpo de la función.
+
+<h2>Examples/Ejemplos</h2>
+```{r}
+# We will define a vector with 5 values / Definiremos un vector con 5 valores
+cars <- c(1, 3, 6, 4, 9)
+# Function will plot a vector passed as parameter / La función graficara un vector pasado como parámetro.
+function.plotCars <- function(x) 
+{
+  # Graph cars using blue points overlayed by a line / Graficamos los carros usando puntos azules con una línea sobrepuesta.
+  plot(x, type="o", col="blue")
+  # Create a title with a red, bold/italic font/Creamos un título con fuente roja, negrita y cursiva.
+  title(main="Autos", col.main="red", font.main=4)
+}
+#We call our function / Llamamos a nuestra funcion
+function.plotCars(cars)
+```
+<h2>Function arguments</h2>
+
+  There are 2 types of arguments formal arguments and the actual arguments of a function. The formal arguments are a property of the function, whereas the actual or calling arguments can vary each time you call a function. For this practice we will discuss how calling arguments are mapped to formal arguments, how to call a function given a list of arguments, how default arguments work.
+
+Argumentos de una función
+
+Hay 2 tipos de argumentos los formales y los argumentos actuales de una función. Los argumentos formales son propios de la función, mientras que el actual o el argumento de llamada puede variar cada vez que se llama una función. Para esta práctica discutiremos como los argumentos de llamada son mapeados a argumentos formales, como llamar una función dada una lista de argumentos, como funcionan los argumentos por defecto.
+
+<h2>Calling functions</h2>
+When calling a function we can specify the arguments by position, by complete name or by partial name. Arguments are matched first by exact name, then by prefix and finally by position.
+
+```{r}
+function.arguments <- function(a_arg1, b_arg2, c_arg3) {
+  list(a = a_arg1, b = b_arg2, c = c_arg3)
+}
+#Argument in order without specifying the name / Argumentos en orden sin especificar el nombre
+str(function.arguments(1, 2, 3))
+#Arguments will first match the exact name then match the rest in order / Los argumentos primero se emparejan por nombre exacto y despues el resto por orden.
+str(function.arguments(2, 3, a_arg1 = 1))
+#Arguments can be matched by abbreviation as long as its not ambiguous / Los argumentos se pueden emparejar por abreviatura siempre y cuanto no sean ambiguos.
+str(function.arguments(2, 3, a = 1))
+```
+<h2>Calling a function given a list of arguments / Llamando a una funcion dada una lista de argumentos</h2>
+
+Suppose you had a list of function arguments / Supongamos que tenemos una lista de argumentos de funcion:
+```{r}
+#we use na.rm=TRUE to ignore nulls / usamos na.rm=TRUE para ignorar valores null
+args <- list(1:10, na.rm = TRUE)
+```
+How could you then send that list to mean()? You need do.call() / ¿Como enviamos esa lista a mean()? Neceistamos do.call():
+```{r}
+#we call the function mean and pass the arguments args / llamamos la funcion mean y pasamos los argumentos args
+do.call(mean, args)
+# Equivalent to / Equivalente a
+mean(1:10, na.rm = TRUE)
+
+```
+<h2>Default arguments:</h2>
+Function arguments in R can have default values.
+
+Argumentos por defecto:
+Los argumentos de función en R pueden tener valores por defecto.
+
+```{r}
+function.default <- function(a = 1, b = 2) {
+  c(a, b)
+}
+function.default()
+```
+```{r}
+function.default2 <- function(a = 1, b = a * 2) {
+  c(a, b)
+}
+function.default2()
+function.default2(10)
+```
+<h1><u>Apply Family</u></h1>
+The apply family of functions are sometimes useful as an alternative to for loops:
+<b>apply() sapply() vapply()</b>
+
+La familia Apply
+La familia de funciones apply son a veces utiles como alternativa para ciclos for: 
+<b>lapply() sapply() vapply()</b>
+
+<h3>lapply() Function</h3>
+The lapply() function is closely related to lists. The lapply() function is a superior order function, this function applies a function to each element of a list or vector.
+
+Funcion lapply()
+La función lapply está estrechamente relacionada con las listas. La función lapply es una función de orden superior, que aplica una función a cada elemento de una lista o vector.
+
+<h2>Example/Ejemplo</h2>
+```{r}
+function.lapplyTest <- function(datasetTest){
+  #We apply the mean function to each element of the list / Aplicamos la funcion mean a cada elemento de la lista
+  lapply(datasetTest,mean,na.rm = TRUE)
+}
+#We will pass the airquality dataset as parameter from R library / Pasaremos como parametro el dataset airquality de la libreria de R
+function.lapplyTest(airquality[,1:4])
+```
+The lapply() function operates over a list or vector and returns, always, a list.
+
+La función lapply opera sobre una lista o vector y devuelve, siempre, una lista. 
+
+<h3>sapply() Function</h3>
+The sapply() function is related to the lapply() function, but sapply() is a simplified version. The sapply() function applies the lapply() function and analyze the result. If the result can be represented in a simple manner than a list, it gets simplified.
+
+La funcion sapply() esta relacionada a la funcion lapply(), pero sapply() es una version simplificada. La funcion sapply() aplica la funcion lapply() y analiza el resultado. Si este se puede representar de una manera mas siple que una lista, entonces se simplifica.
+
+<h2>Example/Ejemplo</h2
+```{r}
+function.sapplyTest <- function(datasetTest){
+  #We apply the mean function to each element of the list / Aplicamos la funcion mean a cada elemento de la lista
+  sapply(datasetTest,mean,na.rm = TRUE)
+}
+#We will pass the airquality dataset as parameter from R library / Pasaremos como parametro el dataset airquality de la libreria de R
+function.sapplyTest(airquality[,1:4])
+```
+
+<h3>vapply() Function</h3>
+Whereas sapply() tries to guess the correct format of the result, vapply() allows to specify it explicit.
+
+Mientras que sapply() trata de adivinar el formato correcto del resultado, vapply() permite especificarlo explícitamente.
+
+<h2>Example/Ejemplo</h2
+```{r}
+function.vapplyTest <- function(datasetTest){
+  #We apply the mean function to each element of the list and specify the type of format / Aplicamos la funcion mean a cada elemento de la lista y especificamos el tipo de formato
+  vapply(datasetTest, mean,na.rm = TRUE, numeric(1))
+}
+#We will pass the airquality dataset as parameter from R library / Pasaremos como parametro el dataset airquality de la libreria de R
+function.vapplyTest(airquality[,1:4])
+```
+
+
+
+
+
