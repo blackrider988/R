@@ -1,0 +1,74 @@
+---
+title: "Home work 3"
+output: html_notebook
+---
+Lectura CSV
+
+Para leer un archivo csv se puede usar la funcion read.table() en la cual se debe especificar el separador a utilizar explicitamente o utilizar la funcion read.csv() o read.csv2() las cuales ya tienen los argumentos header y fill por default con valor TRUE.
+
+df <- read.table("archivo.csv", header=FALSE, sep = ",")
+df <- read.csv("archivo.csv",header = FALSE)
+df <- read.csv2("archivo.csv",header = FALSE)
+
+
+Funcion select() de dplyr
+
+La funcion select() permite seleccionar variables dentro de un data frame, creando un subset utilizando operaciones con las columnas que nos interesan.
+
+Para evitar conflicto con otra libreria la llamaremos indicando que queremos usar select de dplyr con dplyr::select()
+
+librerias
+```{r}
+library(dplyr)
+```
+
+
+
+Lectura dataset
+```{r}
+dataset_results <- read.csv("primary_results.csv",header = TRUE)
+dataset_results
+```
+1. Filtrado por estado de florida
+```{r}
+dataset_results %>%
+  filter(state == "Florida")
+
+```
+2.1 Filtrado de votos por candidato
+```{r}
+dataset_results %>%
+  filter(candidate=="Hillary Clinton"|candidate=="Donald Trump")
+
+```
+2.2 Filtrado votos (Democrata&Shelby)
+```{r}
+dataset_results %>%
+  filter(party=="Democrat"&county=="Shelby")
+```
+2.3 Filtrado votos (Alabama y votos > 15000)
+```{r}
+dataset_results %>%
+  filter(state=="Alabama"&votes>15000)
+```
+3. Uso de select y arrange
+
+3.1 Filtro votos state=Texas y county=Denton Columnas[party,candidate,votes], desc votes
+
+```{r}
+dataset_results %>%
+  filter(state=="Texas"&county=="Denton") %>%
+  dplyr::select(party,candidate,votes) %>%
+  arrange(desc(votes))
+```
+4. uso de mutate y arrange
+
+4.1 Filtro party=Republican, candidate="Ted Cruz", state="Alaska", vote_coute(votes/fraction_votes),arrange(desc(vote_count))
+
+```{r}
+dataset_results %>%
+  filter(party=="Republican" & candidate=="Ted Cruz" & state=="Alaska") %>%
+  mutate(vote_count = (votes/fraction_votes)) %>%
+  arrange(desc(vote_count))
+```
+
