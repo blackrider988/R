@@ -54,7 +54,7 @@ ggplot(diamonds, aes(x=cut,y=price,fill=cut))+
   scale_y_log10()
 ```
 4.    Faceting
-4.1
+4.1   filter
 ```{r}
 filtered_price <- diamonds %>%
   filter(price > 1000 & cut%in%c("Good","Ideal","Premium"))
