@@ -65,3 +65,18 @@ sets %>%
   inner_join(themes,by=c("theme_id" = "id"))
 ```
 
+
+```{r}
+view(parts)
+view(parts_categories)
+
+view_parts <- parts %>%
+  inner_join(parts_categories, by = c("part_cat_id" = "id"))
+
+view_parts <- parts %>%
+  inner_join(parts_categories, by = c("part_cat_id" = "id"),suffix = c("_parts","_parts_categories"))
+
+view(view_parts)
+
+```
+
