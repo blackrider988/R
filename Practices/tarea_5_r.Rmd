@@ -1,0 +1,71 @@
+---
+title: "tarea_5_r"
+output: html_notebook
+---
+
+```{r}
+
+library(tidyverse)
+
+questions <- read_csv('questions.csv')
+answers <- read_csv('answers.csv')
+tags <- read_csv('tags.csv')
+question_tags <- read_csv('question_tags.csv')
+
+view(answers)
+
+```
+1.    Left Joins
+
+1.1   questions y question_tags
+```{r}
+questions_with_tags <- questions %>%
+  left_join(question_tags,by=c("id"="question_id"))%>%
+  left_join(tags,by=c("tag_id"="id"))%>%
+  replace_na(list(tag_name = "only-r"))
+
+view(questions_with_tags)
+
+```
+
+2.    comparing scores across tags
+
+```{r}
+
+questions_with_tags %>%
+  group_by(tag_name)%>%
+  summarize(mean_score = mean(score))%>%
+  arrange(desc(mean_score))
+
+```
+
+3.    Finding gaps between questions and answers
+```{r}
+questions %>%
+  inner_join(answers,by=c("id"="question_id"),suffix=c("_question","_answer"))%>%
+  mutate(gap = creation_date_answer - creation_date_question)
+```
+4.    joining question and answer counts
+```{r}
+answers_counts <- answers %>%
+  count(question_id)
+
+question_answer_counts <- questions %>%
+  left_join(answer_counts,by=c("id"="question_id"))%>%
+    replace_na(list(n = 0))
+  
+view(question_answer_counts)
+
+```
+5.    joining questions, answers, and tags
+```{r}
+stackOverflow <- question_tags %>%
+  inner_join(question_answer_counts,by=c("question_id"="id"))%>%
+  inner_join(tags,by=c("tag_id"="id"))%>%
+  arrange(desc(n))
+
+view(stackOverflow)
+
+
+```
+
